@@ -8,7 +8,7 @@ namespace CompraRapida.Dominio.Enumerados
     {
         NaoDefinido = 0,
         Boleto      = 1,
-        CartoCredito= 2,
+        CartaoCredito= 2,
         Deposito    = 3
     }
 }

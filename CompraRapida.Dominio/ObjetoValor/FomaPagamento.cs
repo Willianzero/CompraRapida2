@@ -1,7 +1,4 @@
 ﻿using CompraRapida.Dominio.Enumerados;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CompraRapida.Dominio.ObjetoValor
 
@@ -12,14 +9,14 @@ namespace CompraRapida.Dominio.ObjetoValor
         public string Nome { get; set; }
         public string Descricao { get; set; }
 
-        public bool EhCartaoCredito
+        public bool EhBoleto
         {
             get { return Id == (int)TipoFormadePagmentoEnum.Boleto; }
         }
 
-        public bool EhCartaCredito
+        public bool EhCartaoCredito
         {
-            get { return Id == (int)TipoFormadePagmentoEnum.CartoCredito; }
+            get { return Id == (int)TipoFormadePagmentoEnum.CartaoCredito; }
         }
 
         public bool EhDeposito

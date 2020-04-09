@@ -11,6 +11,7 @@ namespace CompraRapida.Dominio.Entidades
         public int Id { get; set; }
         public DateTime DataPedido { get; set; }
         public int UsuarioId { get; set; }
+        public virtual Usuario Usuario { get; set; }
         public DateTime DatàPrevisaoEntrega { get; set; }
         public string Estado { get; set; }
         public string CEP { get; set; }

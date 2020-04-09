@@ -18,7 +18,7 @@ namespace CompraRapida.Dominio.Entidades
                 AdicionarCritica("O nome do produto não foi informado!");
 
             if (string.IsNullOrEmpty(Descricao))
-                AdicionarCritica("A descrição do prodduto não foi informada!")
+                AdicionarCritica("A descrição do prodduto não foi informada!");
         }
     }
 }

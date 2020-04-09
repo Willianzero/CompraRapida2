@@ -11,7 +11,7 @@ namespace CompraRapida.Dominio.Entidades
         public string Sobrenome { get; set; }
         public bool EhAdmnistrador { get; set; }
         //um usuário pode ter nenhum ou muitos pedidos
-        public ICollection<Pedido> Pedidos { get; set; }
+        public virtual ICollection<Pedido> Pedidos { get; set; }
 
         public override void Validate()
         {
