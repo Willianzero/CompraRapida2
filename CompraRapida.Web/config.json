@@ -1,5 +1,6 @@
 {
-  "ConnectionString" {
-    "CompraRapidaDB": "server=locahost;uid=root;pwd='';database=CompraRapida"
+  "ConnectionStrings": {
+    "SqlServerConnection": "",
+    "CompraRapidaDB": "server=localhost;uid=root;pwd='';database=CompraRapida"
   }
 }

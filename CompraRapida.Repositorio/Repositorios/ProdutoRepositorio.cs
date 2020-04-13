@@ -1,14 +1,12 @@
 ﻿using CompraRapida.Dominio.Contratos;
 using CompraRapida.Dominio.Entidades;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using CompraRapida.Repositorio.Contexto;
 
 namespace CompraRapida.Repositorio.Repositorios
 {
     public class ProdutoRepositorio : BaseRepositorio<Produto>, IProdutoRepositorio
     {
-        public ProdutoRepositorio()
+        public ProdutoRepositorio(CompraRapidaContexto compraRapidaContexto) : base(compraRapidaContexto)
         {
 
         }

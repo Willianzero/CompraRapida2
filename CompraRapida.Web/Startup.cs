@@ -1,8 +1,12 @@
+using CompraRapida.Dominio.Contratos;
+using CompraRapida.Repositorio.Contexto;
+using CompraRapida.Repositorio.Repositorios;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -28,11 +32,13 @@ namespace CompraRapida.Web
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             var connectionString = Configuration.GetConnectionString("CompraRapidaDB");
             services.AddDbContext<CompraRapidaContexto>(option =>
-                                                                 option.UseLazyLodingProxies()
+                                                                 option.UseLazyLoadingProxies()
                                                                  .UseMySql(connectionString,
                                                                         m => m.MigrationsAssembly("CompraRapida.Repositorio")));
 
-        
+            services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();
+            services.AddScoped<IPedidoRepositorio, PedidoRepositorio>();
+            services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

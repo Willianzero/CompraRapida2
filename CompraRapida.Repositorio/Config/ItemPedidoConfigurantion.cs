@@ -1,5 +1,6 @@
 ﻿using CompraRapida.Dominio.Entidades;
 using Microsoft.EntityFrameworkCore;
+
 using System;
 
 namespace CompraRapida.Repositorio.Config
@@ -12,9 +13,12 @@ namespace CompraRapida.Repositorio.Config
             builder.Property(i => i.ProdutoId);
             builder
                 .Property(i => i.Quantidade)
-                .HasMaxLength(20)
-                .HasColumnType("decimal");
+                .HasMaxLength(20);
 
         }
+    }
+
+    public interface IEntityTypeConfiguration<T>
+    {
     }
 }

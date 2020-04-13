@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace CompraRapida.Repositorio.Config
 {
-    public class FormaPagamentoConfiguration : IEntityTypeConfiguration<FomaPagamento>
+    public class FormaPagamentoConfiguration : IEntityTypeConfiguration<FormaPagamento>
     {
-        public void Configure(EntityTypeBuilder<FomaPagamento> builder)
+        public void Configure(EntityTypeBuilder<FormaPagamento> builder)
         {
             builder.HasKey(f => f.Id);
             builder
@@ -19,20 +19,7 @@ namespace CompraRapida.Repositorio.Config
                 .IsRequired()
                 .HasColumnType("varchar")
                 .HasMaxLength(30);
-            builder
-                .Property(f => f.EhBoleto)
-                .HasColumnType("boolean");
-            builder
-                .Property(f => f.EhCartaoCredito)
-                .HasColumnType("boolean");
-            builder
-                .Property(f => f.EhDeposito)
-                .HasColumnType("boolean");
-            builder
-                .Property(f => f.EhNaoFoiDefinido)
-                .HasColumnType("boolean");
-
-
+           
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using CompraRapida.Dominio.Entidades;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace CompraRapida.Repositorio.Config
@@ -11,38 +10,31 @@ namespace CompraRapida.Repositorio.Config
             builder.HasKey(p => p.Id);
             builder
                 .Property(p => p.DataPedido)
-                .HasColumnType ("DateTime")
                 .IsRequired();
             builder
                 .Property(p => p.UsuarioId)
                 .IsRequired();
             builder
-                .Property(p => p.DatàPrevisaoEntrega)
-                .HasColumnType("DateTime");
+                .Property(p => p.DataPrevisaoEntrega);
             builder
                 .Property(p => p.Estado)
                 .HasMaxLength(2)
-                .IsRequired()
-                .HasColumnType("char(2)");
+                .IsRequired();
             builder
                 .Property(p => p.CEP)
                 .IsRequired()
-                .HasMaxLength(13)
-                .HasColumnType("vachar");
+                .HasMaxLength(13);
             builder
                 .Property(p => p.Cidade)
-                .HasMaxLength(30)
-                .HasColumnType("varchar");
+                .HasMaxLength(30);
             builder
                 .Property(p => p.EnderecoCompleto)
-                .HasMaxLength(100)
-                .HasColumnType("varchar");
+                .HasMaxLength(100);
             builder
                 .Property(p => p.NumeroEndereco)
-                .HasMaxLength(10)
-                .HasColumnType("char(10)");
+                .HasMaxLength(10);
             builder.Property(p => p.FormaPagamentoId);
-            builder.Property(p => p.FomaPagamento);
+            builder.Property(p => p.FormaPagamento);
             builder.Property(p => p.ItemPedido);
 
         }

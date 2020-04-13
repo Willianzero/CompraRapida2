@@ -3,7 +3,7 @@
 namespace CompraRapida.Dominio.ObjetoValor
 
 {
-    public class FomaPagamento
+    public class FormaPagamento
     {
         public int Id { get; set; }
         public string Nome { get; set; }
